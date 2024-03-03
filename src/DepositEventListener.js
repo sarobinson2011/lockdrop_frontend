@@ -38,3 +38,9 @@ export const checkEventsDeposit = async () => {
     });
 };
 
+
+// Event Detected!
+// New withdraw event was emitted! User: 
+// 0xF8f8269488f73fab3935555FCDdD6035699deE25,
+// Amount: 100000000000000, Timestamp: 1709479008
+//             <contral 'OK' button>                
