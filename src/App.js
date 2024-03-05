@@ -3,8 +3,6 @@ import './App.css';
 import DepositComponent from './DepositComponent';
 import sandboxHandler from './Sandbox.js';
 import WithdrawComponent from './WithdrawComponent';
-// import { handleDepositEvents } from './depositEventListener';
-// import { handleWithdrawEvents } from './withdrawEventListener';
 
 
 function App() {

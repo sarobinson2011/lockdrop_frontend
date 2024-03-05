@@ -1,6 +1,6 @@
 
 import { ethers } from 'ethers';
-import './Sandbox.css';
+// import './Sandbox.css';
 import lockdropABI from './contracts/LockDrop.json';
 
 const contractAddress = process.env.REACT_APP_LOCKDROP_ADDRESS;
