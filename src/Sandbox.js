@@ -1,5 +1,6 @@
 
 import { ethers } from 'ethers';
+import './Sandbox.css';
 import lockdropABI from './contracts/LockDrop.json';
 
 const contractAddress = process.env.REACT_APP_LOCKDROP_ADDRESS;
@@ -14,11 +15,11 @@ export const sandboxHandler = async () => {
     console.log('signer:', signer);
     console.log('contractInstance:', contractInstance);
 
-    // contractInstance.on("NewDeposit", (_user, _amount, _timestamp) => {
-    //     console.log("NewDeposit event emitted:", { _user, _amount, _timestamp });
-    // });
-
 }
+
+<button onClick={sandboxHandler} className='cta-button connect-wallet-button'>
+    Run Sandbox
+</button>
 
 export default sandboxHandler;
 

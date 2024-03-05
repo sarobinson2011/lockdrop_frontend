@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
-// import './DepositComponent.css';
+import './DepositComponent.css';
 import lockdropABI from './contracts/LockDrop.json';
 import { checkEventsDeposit } from './DepositEventListener';
 
@@ -24,11 +24,6 @@ const DepositComponent = () => {
             const amountToDeposit = ethers.parseEther(depositAmount);
 
             console.log('Deposit pending...');
-
-            // Listen for the NewDeposit event
-            // contractInstance.on("NewDeposit", (_user, _amount, _timestamp) => {
-            //     console.log("NewDeposit event emitted:", { _user, _amount, _timestamp });
-            // });
 
             const transaction = await contractInstance.deposit({ value: amountToDeposit });
             await transaction.wait();

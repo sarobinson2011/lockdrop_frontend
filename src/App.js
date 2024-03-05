@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import DepositComponent from './DepositComponent';
 import sandboxHandler from './Sandbox.js';
-// import WithdrawComponent from './WithdrawComponent';
+import WithdrawComponent from './WithdrawComponent';
 // import { handleDepositEvents } from './depositEventListener';
 // import { handleWithdrawEvents } from './withdrawEventListener';
 
@@ -66,9 +66,9 @@ function App() {
     );
   };
 
-  const sandboxButton = () => {
+  const SandboxButton = () => {
     return (
-      <button onClick={sandboxHandler} className='cta-button connect-wallet-button'>
+      <button onClick={sandboxHandler} className='cta-button sandbox-button'>
         Run Sandbox
       </button>
     )
@@ -89,7 +89,10 @@ function App() {
         <DepositComponent /> {/* Use the DepositComponent */}
       </div>
       <div style={{ marginBottom: '10px' }}>
-        {sandboxButton()}
+        <WithdrawComponent /> {/* Use the WithdrawComponent */}
+      </div>
+      <div style={{ marginBottom: '10px' }}>
+        {SandboxButton()}
       </div>
     </div>
   );

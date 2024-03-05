@@ -1,10 +1,10 @@
-// DepositEventListener.js
+// WithdrawEventListener.js
 
 import { ethers } from "ethers";
 import lockdropABI from './contracts/LockDrop.json';
 import Swal from 'sweetalert2';
 
-export const checkEventsDeposit = async () => {
+export const checkEventsWithdraw = async () => {
 
     return new Promise((resolve, reject) => {
 
@@ -12,12 +12,12 @@ export const checkEventsDeposit = async () => {
         const provider = new ethers.BrowserProvider(window.ethereum);
         let contract = new ethers.Contract(contractAddress, lockdropABI, provider);
 
-        const handleNewDeposit = (user, amount, timestamp) => {
+        const handleNewWithdraw = (user, amount, timestamp) => {
 
-            console.log("New deposit event was emitted!");
+            console.log("New withdraw event was emitted!");
 
             // ===== <stylised event message> =====
-            const message = `New deposit event was emitted! User: ${user}, Amount: ${amount}, Timestamp: ${timestamp}`;
+            const message = `New withdraw event was emitted! User: ${user}, Amount: ${amount}, Timestamp: ${timestamp}`;
             Swal.fire({
                 title: 'Event Detected!',
                 text: message,
@@ -26,15 +26,14 @@ export const checkEventsDeposit = async () => {
             });
             // ===== </stylised event message> =====
 
-            contract.off("NewDeposit", handleNewDeposit);   // Remove the event listener
+            contract.off("NewWithdraw", handleNewWithdraw);   // Remove the event listener
             resolve();
         };
 
-        contract.on("NewDeposit", handleNewDeposit);
+        contract.on("NewWithdraw", handleNewWithdraw);
 
     }).catch((error) => {
         console.error("Error during promise execution:", error);
         return Promise.reject(error);
     });
 };
-

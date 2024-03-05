@@ -1,0 +1,14 @@
+/* Sandbox.css */
+
+.sandbox-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.sandbox-button {
+    margin-top: 10px;
+    background: #9f9c1a;
+}
